@@ -35,7 +35,7 @@ players.PlayerRemoving:Connect(function(plr)
     end  
 end)
 
-intervalEvent.OnServerEvent:Connect(function(value)
+intervalEvent.OnServerEvent:Connect(function(plr, value)
     interval = value
 end)
 ---------
