@@ -8,7 +8,7 @@ local UIS = game:GetService("UserInputService")
 
 --GUI
 local screenGui = gui:WaitForChild("IntervalUI", 10)
-local sliderBG = screenGui.Bag
+local sliderBG = screenGui.BG
 local slider = sliderBG.Slider
 local intervalText = screenGui.IntervalText
 
