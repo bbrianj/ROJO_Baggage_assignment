@@ -40,7 +40,7 @@ function updateSlide(input)
         slider.Position = UDim2.new(0, x, 0,0)
 
         local intervalValue = (x+1)*10/sliderBGSizeX --interval can be set between 1 and 11
-        intervalText.Text = "Interval: ", intervalValue
+        intervalText.Text = "Interval: ".. intervalValue
         
         intervalUIEvent:FireServer(intervalValue)
     end
