@@ -62,4 +62,11 @@ while task.wait(interval) do
     clone.Color = Color3.new(math.random(1,255),math.random(1,255),math.random(1,255)) --randomly changing colour
     clone.Parent = workspace
     bagMoveEvent:Fire(clone, "Spawn")
+    for _, baggageItem:Part in pairs(workspace:GetDescendants()) do
+        if baggageItem.Name == "Bag" then
+            baggageItem.ClickDetector.MouseHoverEnter:Connect(function(plr)
+                print("Bag ID: "baggageItem:GetAttribute("UniqueID"))
+            end)
+        end
+    end
 end
