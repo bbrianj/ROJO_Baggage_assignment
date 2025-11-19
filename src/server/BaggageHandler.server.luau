@@ -15,6 +15,14 @@ local intervalEvent = remotesFolder.IntervalController
 local bagMoveEvent = remotesFolder.BaggageMove
 local bagIDPrintEvent = remotesFolder.BagIDPrint
 
+--Materials
+local materials = {
+    Enum.Material.Plastic,
+    Enum.Material.Metal,
+    Enum.Material.Marble,
+    Enum.Material.Neon,
+}
+
 
 
 --IntervalController----
@@ -53,6 +61,8 @@ bagMoveEvent.Event:Connect(function(bag, moveType)
         elseif moveType == "Remove" then
             bag.CFrame = endPart.CFrame
             tweenService:Create(bag, TweenInfo.new(0.5, Enum.EasingStyle.Linear),{Transparency = 1}):Play() --anim
+            task.wait(0.5)
+            bag:Destroy()
         end
     end)        
 end)
@@ -62,6 +72,7 @@ while task.wait(interval) do
     local uniqueID = httpService:GenerateGUID(false)
     clone:SetAttribute("UniqueID", uniqueID)
     clone.Color = Color3.new(math.random(1,255),math.random(1,255),math.random(1,255)) --randomly changing colour
+    clone.Material = materials[math.random(1,#materials)]
     clone.Parent = workspace
     bagMoveEvent:Fire(clone, "Spawn")
     for _, baggageItem:Part in pairs(workspace:GetDescendants()) do
