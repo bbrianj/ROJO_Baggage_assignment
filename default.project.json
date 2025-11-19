@@ -10,7 +10,7 @@
     },
 
     "ServerScriptService": {
-      "BaggageHandler": {
+      "Server": {
         "$path": "src/server"
       }
     },
