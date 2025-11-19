@@ -58,7 +58,7 @@ slider.InputEnded:Connect(function(input)
 end)
 
 UIS.InputChanged:Connect(function(input)
-    if dragging and (if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+    if dragging and (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
         updateSlide(input)
     end
 end)
