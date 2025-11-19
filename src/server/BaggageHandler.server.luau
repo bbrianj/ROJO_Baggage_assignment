@@ -38,7 +38,7 @@ end)
 bagMoveEvent.Event:Connect(function(bag, moveType)
     task.spawn(function()
         if moveType == "Spawn" then
-            bag.CFrame = start.CFrame
+            bag.CFrame = startPart.CFrame
             tweenService:Create(bag, TweenInfo.new(0.5, Enum.EasingStyle.Linear),{Transparency = 0}):Play()
             tweenService:Create(bag, TweenInfo.new(10, Enum.EasingStyle.Linear),{CFrame = endPart.CFrame}):Play()
             task.wait(10)
