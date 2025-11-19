@@ -21,7 +21,7 @@ players.PlayerAdded:Connect(function(plr)
 end)
 
 
-players.PlayerRemoved:Connect(function(plr)
+players.PlayerRemoving:Connect(function(plr)
     if plr == intervalController then
         intervalController = players:FindFirstChildOfClass("Player")
     end  
