@@ -54,5 +54,6 @@ while task.wait(interval) do
     local clone = baggage:Clone()
     local uniqueID = httpService:GenerateGUID(false)
     clone:SetAttribute("UniqueID", uniqueID)
+    clone.Parent = workspace
     bagMoveEvent:Fire(clone, "Spawn")
 end
