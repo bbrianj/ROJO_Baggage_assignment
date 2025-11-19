@@ -37,7 +37,7 @@ function updateSlide(input)
             x = 350
         end
 
-        slider.Positon = UDim2.new(0, x, 0,0)
+        slider.Position = UDim2.new(0, x, 0,0)
 
         local intervalValue = (x+1)*10/sliderBGSizeX --interval can be set between 1 and 11
 
@@ -53,12 +53,12 @@ slider.InputBegan:Connect(function(input)
 end)
 slider.InputEnded:Connect(function(input)
     if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = true
+        dragging = false
     end
 end)
 
 UIS.InputChanged:Connect(function(input)
-    if dragging and (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+    if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
         updateSlide(input)
     end
 end)
