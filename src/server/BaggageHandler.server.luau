@@ -13,6 +13,8 @@ local endPart = workspace.EndPart
 local remotesFolder = repStore.Remotes
 local intervalEvent = remotesFolder.IntervalController
 local bagMoveEvent = remotesFolder.BaggageMove
+local bagIDPrintEvent = remotesFolder.BagIDPrint
+
 
 
 --IntervalController----
@@ -65,7 +67,9 @@ while task.wait(interval) do
     for _, baggageItem:Part in pairs(workspace:GetDescendants()) do
         if baggageItem.Name == "Bag" then
             baggageItem.ClickDetector.MouseHoverEnter:Connect(function(plr)
-                print("Bag ID: "..baggageItem:GetAttribute("UniqueID"))
+                local ID = baggageItem:GetAttribute("UniqueID")
+                print("Bag ID: "..ID)
+                bagIDPrintEvent:FireClient(plr, ID)
             end)
         end
     end

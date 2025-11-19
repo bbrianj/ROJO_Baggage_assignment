@@ -17,9 +17,13 @@ local intervalText = screenGui.IntervalText
 --Remotes
 local remotesFolder = repStore.Remotes
 local intervalUIEvent = remotesFolder.IntervalController
+local bagIDPrintEvent = remotesFolder.BagIDPrint
 
 intervalUIEvent.OnClientEvent:Connect(function()
     screenGui.Enabled = true
+end)
+bagIDPrintEvent.OnClientEvent:Connect(function(ID)
+    print("Bag ID: "..ID)
 end)
 -----
 
