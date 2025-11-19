@@ -7,7 +7,7 @@ local repStore = game:GetService("ReplicatedStorage")
 local UIS = game:GetService("UserInputService")
 
 --GUI
-local screenGui = gui.intervalUI
+local screenGui = gui.IntervalUI
 local sliderBG = screenGui.Bag
 local slider = sliderBG.Slider
 local intervalText = screenGui.IntervalText
