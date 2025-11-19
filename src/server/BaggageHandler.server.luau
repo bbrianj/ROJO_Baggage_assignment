@@ -15,7 +15,7 @@ local intervalEvent = remotesFolder.IntervalController
 local bagMoveEvent = remotesFolder.BaggageMove
 
 
---IntervalController
+--IntervalController----
 local interval = 1
 local intervalController = nil
 local intervalControllerAdded = false
@@ -34,6 +34,11 @@ players.PlayerRemoving:Connect(function(plr)
         intervalController = players:FindFirstChildOfClass("Player")
     end  
 end)
+
+intervalEvent.OnServerEvent:Connect(function(value)
+    interval = value
+end)
+---------
 
 bagMoveEvent.Event:Connect(function(bag, moveType)
     task.spawn(function()
