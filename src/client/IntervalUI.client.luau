@@ -45,6 +45,9 @@ function updateSlide(input)
 
         local intervalValue = tonumber((x+1)*10/sliderBGSizeX) --interval can be set between 1 and 11
         intervalValue = math.floor(intervalValue + 0.5)
+        if intervalValue == 0 then
+			intervalValue = 1
+		end
         intervalText.Text = "Interval: ".. intervalValue
         
         intervalUIEvent:FireServer(intervalValue)
